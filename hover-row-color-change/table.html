@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <style>
+        /* Adding CSS to style the table for better readability */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+           <tr><th>EURBRE7E33</th><th>NPQLXGCAC0</th><th>L1DVMAWRAE</th><th>8BHZNUQLSF</th></tr>
+          <tr><td>FEKCL5RY0E</td><td>6ME6YR8V7E</td><td>JOD2JIFDZY</td><td>B7UVAGLF0L</td></tr>
+          <tr><td>JCNRX4R39R</td><td>TC748PFWMR</td><td>S0DM53GP1W</td><td>U2FN3IO365</td></tr>
+          <tr><td>EYGWCD5N5Y</td><td>993ZZOFMC2</td><td>ETRVF3QCCA</td><td>4T9XOILIZ7</td></tr>
+          <tr><td>3CAQ8K545Q</td><td>5SQISW3SWF</td><td>KTGNBWMSTN</td><td>1WLFVBUYNE</td></tr>
+          <tr><td>4IFJUYR85O</td><td>OH2SBA7YWI</td><td>VLYTI85UWM</td><td>3BG95BZ8UP</td></tr>
+          <tr><td>E4QVJ79VVG</td><td>ZCV8U0M5HB</td><td>BHK6151QX7</td><td>P94HF6YFOF</td></tr>
+          <tr><td>ONPSZVKOQE</td><td>ZKMG9ZBWB2</td><td>MMVFSHQH0P</td><td>JEAN1A3WJ1</td></tr>
+          <tr><td>AOZGT8Y129</td><td>39KA2OE3C3</td><td>30GKO4IGK6</td><td>1B4C68LXAV</td></tr>
+          <tr><td>DDVWGPN09E</td><td>GVOR1TGFOW</td><td>FJ67RGK6S4</td><td>DFC9XIXWEU</td></tr>
+          <tr><td>IMV0SL1MBV</td><td>7YN4XLW4VP</td><td>5P7GXZUD2P</td><td>EV3JOKAJTY</td></tr>
+          <tr><td>UI22UK22C4</td><td>Q97S10AS9Q</td><td>8KVMUHRD1X</td><td>94LEGLGQA3</td></tr>
+          <tr><td>7SCME98KQU</td><td>JPRFIG71NB</td><td>DL5DKQT4W9</td><td>P7IIJW4VES</td></tr>
+          <tr><td>ZKNIFVQ9CN</td><td>XZ9CI4A0TH</td><td>T47GOTGSLT</td><td>TJ09JIHMVM</td></tr>
+          <tr><td>2LCYF3A06Y</td><td>PLGSH3KYH6</td><td>G86O0PPXC7</td><td>A49GU0IZUV</td></tr>
+          <tr><td>X8CNCJB20T</td><td>4I3VJZGOGF</td><td>LQCX56PD8X</td><td>NHIEJLLQU6</td></tr>
+          <tr><td>KQ5LOK8F3A</td><td>QJRCCIVHFP</td><td>PVRRK5QV8F</td><td>9ZR0RURBMO</td></tr>
+          <tr><td>YQQ813JVQS</td><td>LLCCXHVZIB</td><td>NML9UBM0WM</td><td>OKHLXD28S1</td></tr>
+ </table>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const table = document.querySelector('table');
+
+            table.addEventListener('mouseover', (event) => {
+                if (event.target.tagName === 'TD') {
+                    event.target.parentNode.style.backgroundColor = 'lightblue'; // Changes the entire row's color
+                }
+            });
+
+            table.addEventListener('mouseout', (event) => {
+                if (event.target.tagName === 'TD') {
+                    event.target.parentNode.style.backgroundColor = ''; // Resets the entire row's color
+                }
+            });
+        });
+    </script>
+</body>
+</html>
