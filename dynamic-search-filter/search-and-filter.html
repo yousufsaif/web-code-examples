@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- 
+    Author: Yousuf Saif
+    GitHub: https://github.com/yousufsaif
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search & Filter</title>
+    <style>
+        .name,
+        .dept,
+        .ext {
+            font-size: 14px;
+            color: green;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .name {
+            width: 55%
+        }
+
+        .dept,
+        .ext {
+            width: 20%;
+        }
+
+        .sort-by {
+            color: red;
+        }
+
+        strong {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="plate">
+        <form action="#">
+            <input type="text" id="search" autocomplete="off" />
+        </form><br>
+        <div class="person">
+            <div class="name"><strong>Name</strong>Yousuf Al Hinai</div>
+            <div class="dept"><strong>Department</strong>Marketing</div>
+            <div class="ext"><strong>Ext</strong>5243</div>
+        </div>
+        <div class="person">
+            <div class="name"><strong>Name</strong>Mustafa Ali</div>
+            <div class="dept"><strong>Department</strong>Act dept</div>
+            <div class="ext"><strong>Ext</strong>5209</div>
+        </div>
+        <div class="person">
+            <div class="name"><strong>Name</strong>Abdullah Said</div>
+            <div class="dept"><strong>Department</strong>Accounting</div>
+            <div class="ext"><strong>Ext</strong>1204</div>
+        </div>
+        <div class="person">
+            <div class="name"><strong>Name</strong>Abdul Rahman Khalil</div>
+            <div class="dept"><strong>Department</strong>Information Technology</div>
+            <div class="ext"><strong>Ext</strong>5304</div>
+        </div>
+        <div class="person">
+            <div class="name"><strong>Name</strong>Munir Fahmi</div>
+            <div class="dept"><strong>Department</strong>Act dept</div>
+            <div class="ext"><strong>Ext</strong>5200</div>
+        </div>
+        <div class="person">
+            <div class="name"><strong>Name</strong>Younus Mohammed</div>
+            <div class="dept"><strong>Department</strong>Administration</div>
+            <div class="ext"><strong>Ext</strong>5203</div>
+        </div>
+        <div class="person">
+            <div class="name"><strong>Name</strong>Muhannad Fareed</div>
+            <div class="dept"><strong>Department</strong>Information dept</div>
+            <div class="ext"><strong>Ext</strong>5204</div>
+        </div>
+    </div>
+    </div>
+    <script>
+        document.getElementById('search').addEventListener('keyup', function () {
+            var value = this.value.toLowerCase();
+            console.log(value);
+
+            var sortPlates = document.querySelectorAll('.person');
+            sortPlates.forEach(function (sortPlate) {
+                var nameText = sortPlate.querySelector('.name').textContent.toLowerCase();
+                var deptText = sortPlate.querySelector('.dept').textContent.toLowerCase();  //You may add the ext no. below
+                if (nameText.indexOf(value) !== -1 || deptText.indexOf(value) !== -1) {     //you may add an alternative search criteria here
+                    sortPlate.style.display = '';
+                } else {
+                    sortPlate.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
