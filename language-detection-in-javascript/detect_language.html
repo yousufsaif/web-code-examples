@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- 
+    Author: Yousuf Saif
+    GitHub: https://github.com/yousufsaif
+-->
+<html>
+<head>
+    <title>Language Detection</title>
+    <script>
+        function detectLanguage() {
+            var inputText = document.getElementById('textInput').value;
+            var languageDiv = document.getElementById('language');
+
+            // Regular expression to match Arabic characters
+            var arabicPattern = /[\u0600-\u06FF\u0750-\u077F]/;
+
+            if (arabicPattern.test(inputText)) {
+                languageDiv.innerHTML = 'Language: Arabic';
+            } else if (inputText !== '') {
+                languageDiv.innerHTML = 'Language: English';
+            } else {
+                languageDiv.innerHTML = '';
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="textInput">Type text:</label>
+        <input type="text" id="textInput" onkeyup="detectLanguage()">
+    </form>
+    <div id="language"></div>
+</body>
+</html>
