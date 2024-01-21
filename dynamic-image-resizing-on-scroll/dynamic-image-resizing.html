@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--   Author: Yousuf Al Hinai -->
+<!--   github.com/yousufsaif -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Image Resizing on Scroll</title>
+<style>
+  body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    font-family: Arial, sans-serif;
+  }
+
+  header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  img {
+    transition: transform 0.1s ease;
+    max-width: 100%;
+  }
+
+  .content {
+    margin: 0 auto;
+    margin-top: 120px;
+    width: 75%;
+  }
+
+  .placeholder {
+    margin: 1500px 0;
+  }
+
+  .text-content{
+    text-align: left;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Dynamic Image Resizing</h1>
+</header>
+
+<div class="content">
+  <img id="dynamicImage" src="https://picsum.photos/500" alt="Random Image">
+  <div class="text-content">
+     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni nisi soluta unde, laborum id quidem, deleniti voluptatem culpa esse ullam itaque perspiciatis adipisci eveniet. Nesciunt consectetur dicta veniam ullam, dignissimos vel voluptate corporis illum vero asperiores id neque culpa aliquid accusantium suscipit voluptatem eos adipisci laboriosam dolor, animi, iure blanditiis? Officiis, dolores est magni rerum dolorem earum quo reprehenderit amet corporis quibusdam perferendis facilis adipisci natus pariatur maxime! Totam accusamus, voluptatum mollitia quis excepturi ea iste, porro, officiis tempora perspiciatis deserunt! Adipisci nihil quaerat earum deleniti nisi ipsam expedita rem, consequuntur voluptates. Quidem similique sint incidunt aperiam officia cupiditate quas?</p>
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio odit expedita tempore non? Voluptas sapiente assumenda non eaque iste! Pariatur adipisci alias maxime, magni, eos vitae reiciendis quisquam velit aut voluptates facere rem consequuntur aliquam dolores provident accusantium, impedit quaerat!</p>
+     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit eius sapiente possimus vero at sunt eos, temporibus et ullam corporis ipsam fugiat cumque expedita alias autem placeat repellat consectetur quae odio quas rem. Vero quidem quia blanditiis reiciendis molestias incidunt architecto dignissimos earum quam. Ratione obcaecati vero earum repellat unde inventore quasi, neque, accusantium a praesentium voluptate possimus tenetur, maxime ipsum! Dicta debitis officia pariatur explicabo unde eum, architecto quam.</p>
+     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni nisi soluta unde, laborum id quidem, deleniti voluptatem culpa esse ullam itaque perspiciatis adipisci eveniet. Nesciunt consectetur dicta veniam ullam, dignissimos vel voluptate corporis illum vero asperiores id neque culpa aliquid accusantium suscipit voluptatem eos adipisci laboriosam dolor, animi, iure blanditiis? Officiis, dolores est magni rerum dolorem earum quo reprehenderit amet corporis quibusdam perferendis facilis adipisci natus pariatur maxime! Totam accusamus, voluptatum mollitia quis excepturi ea iste, porro, officiis tempora perspiciatis deserunt! Adipisci nihil quaerat earum deleniti nisi ipsam expedita rem, consequuntur voluptates. Quidem similique sint incidunt aperiam officia cupiditate quas?</p>
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio odit expedita tempore non? Voluptas sapiente assumenda non eaque iste! Pariatur adipisci alias maxime, magni, eos vitae reiciendis quisquam velit aut voluptates facere rem consequuntur aliquam dolores provident accusantium, impedit quaerat!</p>
+     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit eius sapiente possimus vero at sunt eos, temporibus et ullam corporis ipsam fugiat cumque expedita alias autem placeat repellat consectetur quae odio quas rem. Vero quidem quia blanditiis reiciendis molestias incidunt architecto dignissimos earum quam. Ratione obcaecati vero earum repellat unde inventore quasi, neque, accusantium a praesentium voluptate possimus tenetur, maxime ipsum! Dicta debitis officia pariatur explicabo unde eum, architecto quam.</p>
+    </div>
+</div>
+
+<script>
+  window.onscroll = function() {
+    var image = document.getElementById('dynamicImage');
+    var newScale = 1 - window.pageYOffset / 1000;
+    newScale = newScale < 0.5 ? 0.5 : newScale; // Minimum scale limit
+    image.style.transform = 'scale(' + newScale + ')';
+  };
+</script>
+
+</body>
+</html>
