@@ -52,7 +52,7 @@
 </header>
 
 <div class="content">
-  <img id="dynamicImage" src="https://picsum.photos/500" alt="Random Image">
+  <img class="dynamic-resize" src="https://picsum.photos/500" alt="Random Image">
   <div class="text-content">
      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni nisi soluta unde, laborum id quidem, deleniti voluptatem culpa esse ullam itaque perspiciatis adipisci eveniet. Nesciunt consectetur dicta veniam ullam, dignissimos vel voluptate corporis illum vero asperiores id neque culpa aliquid accusantium suscipit voluptatem eos adipisci laboriosam dolor, animi, iure blanditiis? Officiis, dolores est magni rerum dolorem earum quo reprehenderit amet corporis quibusdam perferendis facilis adipisci natus pariatur maxime! Totam accusamus, voluptatum mollitia quis excepturi ea iste, porro, officiis tempora perspiciatis deserunt! Adipisci nihil quaerat earum deleniti nisi ipsam expedita rem, consequuntur voluptates. Quidem similique sint incidunt aperiam officia cupiditate quas?</p>
      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio odit expedita tempore non? Voluptas sapiente assumenda non eaque iste! Pariatur adipisci alias maxime, magni, eos vitae reiciendis quisquam velit aut voluptates facere rem consequuntur aliquam dolores provident accusantium, impedit quaerat!</p>
@@ -65,12 +65,20 @@
 
 <script>
   window.onscroll = function() {
-    var image = document.getElementById('dynamicImage');
+    // Select all images with the class 'dynamic-resize'
+    var images = document.getElementsByClassName('dynamic-resize');
+
+    // Calculate the new scale based on the scroll position
     var newScale = 1 - window.pageYOffset / 1000;
     newScale = newScale < 0.5 ? 0.5 : newScale; // Minimum scale limit
-    image.style.transform = 'scale(' + newScale + ')';
+
+    // Apply the new scale to all selected images
+    for (var i = 0; i < images.length; i++) {
+      images[i].style.transform = 'scale(' + newScale + ')';
+    }
   };
 </script>
+
 
 </body>
 </html>
