@@ -1,6 +1,6 @@
 # Dynamic Image Resizing on Scroll
 
-This repository contains a simple web page demonstrating dynamic resizing of an image as the user scrolls. The image will decrease in size when the user scrolls down and return to its original size when scrolling up.
+This snippet contains a simple web page demonstrating dynamic resizing of an image as the user scrolls. The image will decrease in size when the user scrolls down and return to its original size when scrolling up. It is built using HTML, CSS, and JavaSctip.
 
 
 ## Features
