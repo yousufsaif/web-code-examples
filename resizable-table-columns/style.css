@@ -1,0 +1,29 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed; /* This is important to make the columns draggable */
+}
+
+th, td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+  cursor: col-resize;
+  position: relative; /* Required for the resizer pseudo-element */
+}
+
+th::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  cursor: col-resize;
+  user-select: none;
+  background-color: #ccc; /* Resizer line color */
+}
